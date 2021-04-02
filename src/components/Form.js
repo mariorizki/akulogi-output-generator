@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactToPrint from 'react-to-print';
 import Output from './Output';
 
 import classes from './Form.module.css';
@@ -8,7 +9,7 @@ import moron from '../assets/images/moron.png';
 import below_average from '../assets/images/below_average.png';
 import average from '../assets/images/average.png';
 
-class form extends Component {
+class form extends React.PureComponent {
   state = {
     nama: '',
     tglLahir: '',
@@ -85,18 +86,56 @@ class form extends Component {
               onChange={this.handleChange}
             />
           </div>
-
-          <button>Print Output</button>
         </form>
+
+        <ReactToPrint
+          trigger={() => {
+            // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+            // to the root node of the returned component as it will be overwritten.
+            return (
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  marginTop: '30px'
+                }}
+              >
+                <button>Generate PDF</button>
+              </div>
+            );
+          }}
+          content={() => this.componentRef}
+        />
         <Output
           nama={nama}
           tglLahir={tglLahir}
           tglPemeriksaan={tglPemeriksaan}
           sekolah={sekolah}
+          ref={el => (this.componentRef = el)}
         />
       </>
     );
   }
 }
 
+export class ComponentToPrint extends React.PureComponent {
+  render() {
+    return (
+      <table>
+        <thead>
+          <th>column 1</th>
+          <th>column 2</th>
+          <th>column 3</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data 1</td>
+            <td>data 2</td>
+            <td>data 3</td>
+          </tr>
+        </tbody>
+      </table>
+    );
+  }
+}
 export default form;
