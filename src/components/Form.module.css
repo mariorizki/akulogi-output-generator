@@ -1,0 +1,20 @@
+.Form {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Form input {
+  display: block;
+}
+
+.Form div {
+  margin-top: 20px;
+}
+
+.Form img {
+  height: 280px;
+  width: 310px;
+}
