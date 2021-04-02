@@ -1,0 +1,46 @@
+.Output {
+}
+
+.Output h1 {
+  text-align: center;
+}
+
+.Rahasia {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.Rahasia div {
+  border: 3px solid #cef898;
+  width: 70px;
+  text-align: center;
+  padding: 5px;
+}
+
+.BioContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.Bio {
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.BioItem b {
+  display: inline-block;
+  width: 30%;
+  position: relative;
+  padding-right: 10px;
+  margin-left: 20px;
+}
+
+.BioItem b::after {
+  content: ':';
+  position: absolute;
+  right: 10px;
+}

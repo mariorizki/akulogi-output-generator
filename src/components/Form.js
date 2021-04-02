@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Output from './Output';
+
 import classes from './Form.module.css';
 import idiot from '../assets/images/idiot.png';
 import moron from '../assets/images/moron.png';
@@ -32,10 +35,11 @@ class form extends Component {
     } else if (iq > 89 && iq <= 109) {
       category = average;
     }
-    console.log(category);
+
     return (
       <>
         <form action="" className={classes.Form}>
+          <h3>Akulogi Output Generator</h3>
           <div>
             <label>Nama</label>
             <input
@@ -81,9 +85,15 @@ class form extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <p>{nama}</p>
-          <img src={category} alt="" />
+
+          <button>Print Output</button>
         </form>
+        <Output
+          nama={nama}
+          tglLahir={tglLahir}
+          tglPemeriksaan={tglPemeriksaan}
+          sekolah={sekolah}
+        />
       </>
     );
   }
