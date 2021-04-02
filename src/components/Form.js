@@ -16,7 +16,7 @@ class form extends React.PureComponent {
     tglLahir: '',
     tglPemeriksaan: '',
     sekolah: '',
-    iq: 0,
+    iq: 100,
     category: ''
   };
 
@@ -126,6 +126,7 @@ class form extends React.PureComponent {
           tglPemeriksaan={tglPemeriksaan}
           sekolah={sekolah}
           iq={iq}
+          category={category}
           ref={el => (this.componentRef = el)}
         />
       </>

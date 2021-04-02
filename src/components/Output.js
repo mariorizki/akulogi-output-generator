@@ -1,6 +1,10 @@
 import React from 'react';
 import classes from './Output.module.css';
 
+const idiot = {
+  header: 'Kamu sangat idiot!'
+};
+
 class Output extends React.PureComponent {
   render() {
     return (
@@ -31,7 +35,14 @@ class Output extends React.PureComponent {
         </div>
 
         <div>
-          <div>DESC</div>
+          <div>
+            <p>
+              <b>
+                {this.props.nama}, Kamu memiliki skor IQ {this.props.category}
+              </b>
+            </p>
+          </div>
+
           <div>GAMBAR</div>
         </div>
       </div>
