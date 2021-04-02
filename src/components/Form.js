@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import ReactToPrint from 'react-to-print';
 import Output from './Output';
 
 import classes from './Form.module.css';
-import idiot from '../assets/images/idiot.png';
-import moron from '../assets/images/moron.png';
-import below_average from '../assets/images/below_average.png';
-import average from '../assets/images/average.png';
+
+// import idiot from '../assets/images/idiot.png';
+// import moron from '../assets/images/moron.png';
+// import below_average from '../assets/images/below_average.png';
+// import average from '../assets/images/average.png';
 
 class form extends React.PureComponent {
   state = {
@@ -15,7 +16,8 @@ class form extends React.PureComponent {
     tglLahir: '',
     tglPemeriksaan: '',
     sekolah: '',
-    iq: 0
+    iq: 0,
+    category: ''
   };
 
   handleChange = event => {
@@ -24,19 +26,31 @@ class form extends React.PureComponent {
   };
 
   render() {
-    const { nama, tglLahir, tglPemeriksaan, sekolah, iq } = this.state;
+    const {
+      nama,
+      tglLahir,
+      tglPemeriksaan,
+      sekolah,
+      iq,
+      category
+    } = this.state;
 
-    let category = null;
+    let newCategory = '';
     if (iq < 69) {
-      category = idiot;
+      newCategory = 'idiot';
+      this.setState({ category: newCategory });
     } else if (iq > 69 && iq <= 79) {
-      category = moron;
+      newCategory = 'moron';
+      this.setState({ category: newCategory });
     } else if (iq > 79 && iq <= 89) {
-      category = below_average;
+      newCategory = 'below average';
+      this.setState({ category: newCategory });
     } else if (iq > 89 && iq <= 109) {
-      category = average;
+      newCategory = 'average';
+      this.setState({ category: newCategory });
     }
 
+    console.log(category);
     return (
       <>
         <form action="" className={classes.Form}>
@@ -111,6 +125,7 @@ class form extends React.PureComponent {
           tglLahir={tglLahir}
           tglPemeriksaan={tglPemeriksaan}
           sekolah={sekolah}
+          iq={iq}
           ref={el => (this.componentRef = el)}
         />
       </>
@@ -118,24 +133,4 @@ class form extends React.PureComponent {
   }
 }
 
-export class ComponentToPrint extends React.PureComponent {
-  render() {
-    return (
-      <table>
-        <thead>
-          <th>column 1</th>
-          <th>column 2</th>
-          <th>column 3</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data 1</td>
-            <td>data 2</td>
-            <td>data 3</td>
-          </tr>
-        </tbody>
-      </table>
-    );
-  }
-}
 export default form;

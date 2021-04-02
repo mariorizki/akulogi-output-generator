@@ -29,6 +29,11 @@ class Output extends React.PureComponent {
             </div>
           </div>
         </div>
+
+        <div>
+          <div>DESC</div>
+          <div>GAMBAR</div>
+        </div>
       </div>
     );
   }
