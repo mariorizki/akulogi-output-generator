@@ -64,6 +64,15 @@ class Output extends React.PureComponent {
 
           <div className={classes.PageOneImage}>
             <img src={imageCategory} alt="" />
+            <div className={classes.BubbleText}>
+              <b>
+                <p>Skor IQ</p>
+              </b>
+              <b>
+                <p>Kamu {this.props.iq}!</p>
+              </b>
+              <p>Skala IST</p>
+            </div>
           </div>
         </div>
       </div>

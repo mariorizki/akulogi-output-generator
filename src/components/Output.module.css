@@ -57,8 +57,18 @@
 
 .PageOneImage {
   width: 50%;
+  position: relative;
 }
 
 .PageOneImage img {
-  width: 80%;
+  width: 100%;
+}
+
+.BubbleText {
+  position: absolute;
+  top: 5px;
+  right: 45px;
+  z-index: 100;
+  text-align: center;
+  line-height: 1px;
 }
