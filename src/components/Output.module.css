@@ -47,13 +47,12 @@
 
 .PageOneOutput {
   display: flex;
-  margin-top: 50px;
+  margin: 50px auto;
+  width: 80%;
 }
 
 .PageOneDesc {
   width: 50%;
-  padding: 30px;
-  box-sizing: border-box;
 }
 
 .PageOneImage {
