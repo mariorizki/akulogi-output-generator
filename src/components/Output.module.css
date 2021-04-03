@@ -26,7 +26,7 @@
   margin-top: 30px;
 }
 .Bio {
-  width: 60%;
+  width: 75%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
@@ -43,4 +43,23 @@
   content: ':';
   position: absolute;
   right: 10px;
+}
+
+.PageOneOutput {
+  display: flex;
+  margin-top: 50px;
+}
+
+.PageOneDesc {
+  width: 50%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.PageOneImage {
+  width: 50%;
+}
+
+.PageOneImage img {
+  width: 80%;
 }

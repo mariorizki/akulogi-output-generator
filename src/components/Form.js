@@ -5,11 +5,6 @@ import Output from './Output';
 
 import classes from './Form.module.css';
 
-// import idiot from '../assets/images/idiot.png';
-// import moron from '../assets/images/moron.png';
-// import below_average from '../assets/images/below_average.png';
-// import average from '../assets/images/average.png';
-
 class form extends React.PureComponent {
   state = {
     nama: '',
