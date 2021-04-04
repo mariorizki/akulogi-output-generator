@@ -111,7 +111,7 @@ class Output extends React.PureComponent {
           </div>
         </div>
         <div
-          style={{ height: '500px', width: '93%', margin: '50px auto 0 auto' }}
+          style={{ height: '500px', width: '93%', margin: '30px auto 0 auto' }}
         >
           <Bar
             data={data}
