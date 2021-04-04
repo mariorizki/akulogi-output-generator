@@ -12,7 +12,14 @@ class form extends React.PureComponent {
     tglPemeriksaan: '',
     sekolah: '',
     iq: 100,
-    category: ''
+    category: '',
+    dayaTangkap: 0,
+    kemampuanNumerik: 0,
+    kemampuanAnalisis: 0,
+    fleksibilitasBerpikir: 0,
+    abstraksiVerbal: 0,
+    abstraksiRuang: 0,
+    dayaIngat: 0
   };
 
   handleChange = event => {
@@ -23,11 +30,18 @@ class form extends React.PureComponent {
   render() {
     const {
       nama,
-      tglLahir,
+      usia,
       tglPemeriksaan,
       sekolah,
       iq,
-      category
+      category,
+      dayaTangkap,
+      kemampuanNumerik,
+      kemampuanAnalisis,
+      fleksibilitasBerpikir,
+      abstraksiVerbal,
+      abstraksiRuang,
+      dayaIngat
     } = this.state;
 
     let newCategory = '';
@@ -60,11 +74,11 @@ class form extends React.PureComponent {
             />
           </div>
           <div>
-            <label>Tempat tanggal lahir</label>
+            <label>Usia</label>
             <input
-              name="tglLahir"
-              type="text"
-              value={tglLahir}
+              name="usia"
+              type="number"
+              value={usia}
               onChange={this.handleChange}
             />
           </div>
@@ -95,6 +109,84 @@ class form extends React.PureComponent {
               onChange={this.handleChange}
             />
           </div>
+
+          <div>
+            <label>Daya Tangkap</label>
+            <input
+              name="dayaTangkap"
+              type="number"
+              value={dayaTangkap}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Kemampuan Numerik</label>
+            <input
+              name="kemampuanNumerik"
+              type="number"
+              value={kemampuanNumerik}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Kemampuan Analisis</label>
+            <input
+              name="kemampuanAnalisis"
+              type="number"
+              value={kemampuanAnalisis}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Fleksibilitas Berpikir</label>
+            <input
+              name="fleksibilitasBerpikir"
+              type="number"
+              value={fleksibilitasBerpikir}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Abstraksi Verbal</label>
+            <input
+              name="abstraksiVerbal"
+              type="number"
+              value={abstraksiVerbal}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Abstraksi Ruang</label>
+            <input
+              name="abstraksiRuang"
+              type="number"
+              value={abstraksiRuang}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
+          <div>
+            <label>Daya Ingat</label>
+            <input
+              name="dayaIngat"
+              type="number"
+              value={dayaIngat}
+              onChange={this.handleChange}
+              min="1"
+              max="7"
+            />
+          </div>
         </form>
 
         <ReactToPrint
@@ -117,11 +209,18 @@ class form extends React.PureComponent {
         />
         <Output
           nama={nama}
-          tglLahir={tglLahir}
+          usia={usia}
           tglPemeriksaan={tglPemeriksaan}
           sekolah={sekolah}
           iq={iq}
           category={category}
+          dayaTangkap={dayaTangkap}
+          kemampuanNumerik={kemampuanNumerik}
+          kemampuanAnalisis={kemampuanAnalisis}
+          fleksibilitasBerpikir={fleksibilitasBerpikir}
+          abstraksiVerbal={abstraksiVerbal}
+          abstraksiRuang={abstraksiRuang}
+          dayaIngat={dayaIngat}
           ref={el => (this.componentRef = el)}
         />
       </>

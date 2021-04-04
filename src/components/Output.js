@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Output.module.css';
+import { Bar } from 'react-chartjs-2';
 
 import idiot from '../assets/images/idiot.png';
 import moron from '../assets/images/moron.png';
@@ -18,6 +19,40 @@ class Output extends React.PureComponent {
     } else if (this.props.category === 'average') {
       imageCategory = average;
     }
+
+    const data = {
+      labels: [
+        ['Daya', 'Tangkap'],
+        ['Kemampuan', 'Numerik'],
+        ['Kemampuan', 'Analisis'],
+        ['Fleksibilitas', 'Berpikir'],
+        ['Abstraksi', 'Verbal'],
+        ['Abstraksi', 'Ruang'],
+        ['Daya', 'Ingat']
+      ],
+      datasets: [
+        {
+          data: [
+            this.props.dayaTangkap,
+            this.props.kemampuanNumerik,
+            this.props.kemampuanAnalisis,
+            this.props.fleksibilitasBerpikir,
+            this.props.abstraksiVerbal,
+            this.props.abstraksiRuang,
+            this.props.dayaIngat
+          ],
+          backgroundColor: [
+            '#ffadad',
+            '#ffd6a5',
+            '#fdffb6',
+            '#caffbf',
+            '#9bf6ff',
+            '#a0c4ff',
+            '#bdb2ff'
+          ]
+        }
+      ]
+    };
     return (
       <div className={classes.Output}>
         <div className={classes.Rahasia}>
@@ -33,7 +68,7 @@ class Output extends React.PureComponent {
                 <b>Nama</b> {this.props.nama}
               </p>
               <p>
-                <b>Tempat tanggal lahir</b> {this.props.tglLahir}
+                <b>Tempat tanggal lahir</b> {this.props.usia}
               </p>
               <p>
                 <b>Tanggal pemeriksaan</b> {this.props.tglPemeriksaan}
@@ -74,6 +109,32 @@ class Output extends React.PureComponent {
               <p>Skala IST</p>
             </div>
           </div>
+        </div>
+        <div
+          style={{ height: '500px', width: '93%', margin: '50px auto 0 auto' }}
+        >
+          <Bar
+            data={data}
+            options={{
+              title: {
+                display: true,
+                text: 'PSIKOGRAM',
+                fontSize: 24
+              },
+              maintainAspectRatio: false,
+              legend: { display: false },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      beginAtZero: true,
+                      max: 7
+                    }
+                  }
+                ]
+              }
+            }}
+          />
         </div>
       </div>
     );
