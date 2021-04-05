@@ -95,6 +95,7 @@ class Output extends React.PureComponent {
               harum sapiente omnis quis sed voluptas perspiciatis temporibus
               quam tempore a molestiae, facere iure.
             </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
 
           <div className={classes.PageOneImage}>
@@ -110,9 +111,7 @@ class Output extends React.PureComponent {
             </div>
           </div>
         </div>
-        <div
-          style={{ height: '450px', width: '93%', margin: '30px auto 0 auto' }}
-        >
+        <div style={{ height: '400px', width: '60%', margin: '20px' }}>
           <Bar
             data={data}
             options={{
